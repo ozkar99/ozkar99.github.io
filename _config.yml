@@ -15,13 +15,11 @@ navigation:
    url: /index.html
  - title: About
    url: /about
- - title: Contact
-   url: /contact
 
 social:
    github: ozkar99
-   twitter: ''
    facebook: ozkar99
-   email: ''
+   email:
+   twitter:
 
-google_analytics: ""
+google_analytics: 
