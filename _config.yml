@@ -1,12 +1,7 @@
 title: ozkar's blog
-description: random thoughts about programming
-
 url: http://ozkar.org/
-baseurl: ""
 paginate_path: "blog/page:num/"
 permalink: blog/:title/
-
-highlighter: pygments
 paginate: 5
 
 navigation:
