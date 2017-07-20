@@ -1,6 +1,7 @@
 title: ozkar's blog
-url: http://ozkar.org/
-paginate_path: "blog/page:num/"
+url: http://ozkar.org/ #for prod
+#url: http://localhost:4000/ #for dev
+paginate_path: "blog/page/:num/"
 permalink: blog/:title/
 paginate: 5
 
