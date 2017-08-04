@@ -7,16 +7,16 @@ comments: true
 
 <p class="intro"><span class="dropcap">I</span>ntroducing schema.rb  
 
-### What is schema.rb?
+## What is schema.rb?
 A simple tool to handle schema migrations.  
 
-### Why?
+## Why?
 Since ive started to use more go, and dont really want to go for a full fledged go solution for ORM and databases.  
 I decided the best course of action is to simply create a KISS tool to help me migrate databases.  
 
-### How?
+## How?
 Its made in ruby, since i have a lot of time without programming in ruby and i enjoy the language quite a bit.  
 
-### Where is it?
+## Where is it?
 Is still WIP but heres the repo: [schema.rb](https://github.com/ozkar99/schema.rb)  
 At the time of writing, schema.rb is just a skeleton and doesnt really do anything other than parsing of the options.  
