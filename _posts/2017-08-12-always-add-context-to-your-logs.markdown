@@ -11,7 +11,7 @@ comments: true
 Its a good rule of thumb to add context to your logs, if you dont believe lets see a simple case.  
 
 
-### Before Context
+## Broken Logs:
 Imagine you have a system in which you run code asynchronously on diferent places.  
 
 You can have a webserver running, a page, if something goes wrong you log the exception:
@@ -51,46 +51,49 @@ The problem with this approuch (appart from enclosing everything in a huge `try-
 Is that when you want to actually debug something and see the logs, you will see something like this:  
 
 Timestamp|Level|Message
-XXXX-XX-XX XX:XX:XX|ERROR|System.NullReferenceException: Object reference not set to an instance of an object
-XXXX-XX-XX XX:XX:XX|ERROR|System.NullReferenceException: Object reference not set to an instance of an object
-XXXX-XX-XX XX:XX:XX|ERROR|System.NullReferenceException: Object reference not set to an instance of an object
-XXXX-XX-XX XX:XX:XX|ERROR|System.NullReferenceException: Object reference not set to an instance of an object
-XXXX-XX-XX XX:XX:XX|ERROR|System.NullReferenceException: Object reference not set to an instance of an object
-XXXX-XX-XX XX:XX:XX|ERROR|System.NullReferenceException: Object reference not set to an instance of an object
+XXXX-XX-XX XX:XX:XX|ERROR|System.NullReferenceException: Object reference not set to an instance of an object...
+XXXX-XX-XX XX:XX:XX|ERROR|System.NullReferenceException: Object reference not set to an instance of an object...
+XXXX-XX-XX XX:XX:XX|ERROR|System.NullReferenceException: Object reference not set to an instance of an object...
+XXXX-XX-XX XX:XX:XX|ERROR|System.NullReferenceException: Object reference not set to an instance of an object...
+XXXX-XX-XX XX:XX:XX|ERROR|System.NullReferenceException: Object reference not set to an instance of an object...
+XXXX-XX-XX XX:XX:XX|ERROR|System.NullReferenceException: Object reference not set to an instance of an object...
 
-### The Solution:  
+## The Solution:  
 This is easily fixable by adding context to the log calls:  
-```C#
+{% highlight csharp %}
   try {
     DoSomeWebServerStuff()
   }
   catch (Exception e) {
     Log.Error(e)
   }
-```
+{% endhighlight %}
+
 
 Becomes:  
 
-```C#
+{% highlight csharp %}
   try {
     DoSomeWebServerStuff()
   }
   catch (Exception e) {
     Log.ErrorFormat("DoSomeWebServerStuff Exception: {0}", e)
   }
-```
+{% endhighlight %}
+
 <hr />
 
-```C#
+{% highlight csharp %}
   try {
     HandleNotification()
   }
   catch (Exception e) {
     Log.Error(e)
   }
-```
+{% endhighlight %}
 
-Becomes:  
+
+{% highlight csharp %}
 ```C#
   try {
     HandleNotification()
@@ -98,40 +101,43 @@ Becomes:
   catch (Exception e) {
     Log.ErrorFormat("HandleNotification Exception: {0}", e)
   }
-```
+{% endhighlight %}
+
 <hr />
 
 And
-```C#
+{% highlight csharp %}
   try {
     DoServiceTask()
   }
   catch (Exception e) {
     Log.Error(e)
   }
-```
+{% endhighlight %}
+
 
 Becomes:  
-```C#
+{% highlight csharp %}
   try {
     DoServiceTask()
   }
   catch (Exception e) {
     Log.ErrorFormat("DoServiceTask Exception: {0}", e)
   }
-```
+{% endhighlight %}
+
 
 Now when you look at the logs you will see something like this:  
 
 Timestamp|Level|Message
-XXXX-XX-XX XX:XX:XX|ERROR|DoServiceTask Exception: System.NullReferenceException: Object reference not set to an instance of an object
-XXXX-XX-XX XX:XX:XX|ERROR|HandleNotification Exception: System.NullReferenceException: Object reference not set to an instance of an object
-XXXX-XX-XX XX:XX:XX|ERROR|DoWebServerStuff Exception: System.NullReferenceException: Object reference not set to an instance of an object
-XXXX-XX-XX XX:XX:XX|ERROR|DoServiceTask Exception: System.NullReferenceException: Object reference not set to an instance of an object
-XXXX-XX-XX XX:XX:XX|ERROR|HandleNotification Exception: System.NullReferenceException: Object reference not set to an instance of an object
-XXXX-XX-XX XX:XX:XX|ERROR|HandleNotification Exception: System.NullReferenceException: Object reference not set to an instance of an object
+XXXX-XX-XX XX:XX:XX|ERROR|DoServiceTask Exception: System.NullReferenceException: Object reference not set to an instance of an object...
+XXXX-XX-XX XX:XX:XX|ERROR|HandleNotification Exception: System.NullReferenceException: Object reference not set to an instance of an object...
+XXXX-XX-XX XX:XX:XX|ERROR|DoWebServerStuff Exception: System.NullReferenceException: Object reference not set to an instance of an object...
+XXXX-XX-XX XX:XX:XX|ERROR|DoServiceTask Exception: System.NullReferenceException: Object reference not set to an instance of an object...
+XXXX-XX-XX XX:XX:XX|ERROR|HandleNotification Exception: System.NullReferenceException: Object reference not set to an instance of an object...
+XXXX-XX-XX XX:XX:XX|ERROR|HandleNotification Exception: System.NullReferenceException: Object reference not set to an instance of an object...
 
-### Conclusion:
+## Conclusion:
 
 This is a very basic example, but its also a very basic concept, i shouldnt even be writing this article, but i still this kind of code in the wild. 
 
