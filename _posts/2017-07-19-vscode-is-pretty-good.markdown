@@ -40,7 +40,7 @@ I actually use this feature a lot when debugging webservices that use xml or jso
 ## Plugins are (also) pretty good
 vscode plugins are often mantained in the main repository for vscode.  
 Check out the repo for the [go tooling plugin.](https://github.com/Microsoft/vscode-go)  
-theres also over <> plugins to choose from the plugin repositories, and from the code that i've seen its pretty easy to make new ones.  
+theres also a lot of plugins to choose from the plugin repositories, and from the code that i've seen its pretty easy to make new ones.  
 
 ## Git integration
 I actually dont use this at all, since i do everything git related on console, but hey its there if you need it.  

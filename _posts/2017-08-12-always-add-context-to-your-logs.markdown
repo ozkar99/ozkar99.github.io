@@ -46,7 +46,7 @@ And also you have a service running somewhere, doing taks:
 
 We can already see that this smells really bad.  
 
-The problem with this approuch is that when you want to actually debug something and see the logs, you will see something like this:  
+The problem with this approach is that when you want to actually debug something and see the logs, you will see something like this:  
 
 Timestamp|Level|Message
 XXXX-XX-XX XX:XX:XX|ERROR|System.NullReferenceException: Object reference not set to an instance of an object...
