@@ -11,14 +11,16 @@ comments: true
 
 In a normal application we read the views using the `html/template` package, like so:  
 
-`t, _ := template.ParseFiles("views/layout.html.tmpl", "views/body.html.tmpl")`  
+```
+t, _ := template.ParseFiles("views/layout.html.tmpl", "views/body.html.tmpl")
+```  
 
-Then we simply do `t.Execute(w, data)` where w is our `http.ResponseWriter`  
+Then we simply do ```t.Execute(w, data)``` where w is our `http.ResponseWriter`  
 
 ## Using go-bindata:
 The first thing we need to do is package the views into a go file, this is done by running the next command:
 
-`go-bindata views/...`  
+```go-bindata views/...```
 You can even add multiple folders, strip prefixes and a bunch of goodies, but thats better explained [here](https://github.com/shuLhan/go-bindata).  
 
 This will create a file called `bindata.go`, i recomend changing the package name from `main` into something like `assets` or `bindata` that way you can share your bin data trough all the packages your application has.  
@@ -33,10 +35,8 @@ If you browse trough the file you would see it looks something like this:
 // assets/fonts/fontawesome-webfont.ttf
 // assets/fonts/fontawesome-webfont.woff
 // assets/fonts/fontawesome-webfont.woff2
-// views/auth.html.tmpl
-// views/forgotpass.html.tmpl
+// views/bodyt.html.tmpl
 // views/layout.html.tmpl
-// views/resetpass.html.tmpl
 // DO NOT EDIT!
 
 package bindata
@@ -92,14 +92,14 @@ var _bindata = map[string]func() (*asset, error){
 ```
 and the `Asset` function, which is a wrapper to accesing the values of the map.
 
-To access a file `byte[]` you only need to call: `data, err := bindata.Asset("views/layout.html.tmp")` (in my case because i changed the package from `main` to `bindata`) and it will, unsurprisingly give us the value of the key for the `_bindata` variable, it will return and `error` if anything goes wrong.
+To access a file `byte[]` you only need to call: ```data, err := bindata.Asset("views/layout.html.tmp")``` (in my case because i changed the package from `main` to `bindata`) and it will, unsurprisingly give us the value of the key for the `_bindata` variable, it will return and `error` if anything goes wrong.
 
 
-Now to execute the template we must first convert it into string like this: `stringFile := string(data)` and then we can feed it into the `html/template` package like a string.
+Now to execute the template we must first convert it into string like this: ```stringFile := string(data)``` and then we can feed it into the `html/template` package like a string.
 
-Then replace the function `template.ParseFile` for `t, := template.New("cacheNameHere").Parse(stringFile)` after that its regular business serving with `t.Execute(w)`.
+Then replace the function `template.ParseFile` for ```t, := template.New("cacheNameHere").Parse(stringFile)``` after that its regular business serving with ```t.Execute(w)```.
 
-Theres only one problem to this, the `template.ParseFiles` function call is variadic, and you can supply various templates at once like when we used in the previous example: `t, _ := template.ParseFiles("views/layout.html.tmpl", "views/body.html.tmpl")` where we supply a layout.
+Theres only one problem to this, the `template.ParseFiles` function call is variadic, and you can supply various templates at once like when we used in the previous example: ```t, _ := template.ParseFiles("views/layout.html.tmpl", "views/body.html.tmpl")``` where we supply a layout.
 
 To fix these we must understand what `template.ParseFiles` does first:  
   
