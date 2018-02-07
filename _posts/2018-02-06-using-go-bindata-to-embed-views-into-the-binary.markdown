@@ -27,7 +27,7 @@ The first thing we need to do is package the views into a go file, this is done 
 ```
 go-bindata views/...
 ```
-You can even add multiple folders, strip prefixes and a bunch of goodies, but thats better explained (here)[https://github.com/shuLhan/go-bindata].  
+You can even add multiple folders, strip prefixes and a bunch of goodies, but thats better explained [here](https://github.com/shuLhan/go-bindata)
 
 This will create a file called `bindata.go`, i recomend changing the package name from `main` into something like `assets` or `bindata` that way you can share your bin data trough all the packages your application has.  
 
@@ -98,16 +98,16 @@ var _bindata = map[string]func() (*asset, error){
 ```
 and the `Asset` function, which is a wrapper to accesing the values of the map.
 
-To access a file `byte[]` you only need to call: 
+To access a file `[]byte` you only need to call: 
 ```
-data, err := bindata.Asset("views/layout.html.tmp")
+bytes, err := bindata.Asset("views/layout.html.tmp")
 ``` 
 (in my case because i changed the package from `main` to `bindata`) and it will, unsurprisingly give us the value of the key for the `_bindata` variable, it will return and `error` if anything goes wrong.
 
 
 Now to execute the template we must first convert it into string like this: 
 ```
-stringFile := string(data)
+stringFile := string(bytes)
 ``` 
 and then we can feed it into the `html/template` package like a string.
 
@@ -125,7 +125,7 @@ where we supply a layout.
 
 To fix these we must understand what `template.ParseFiles` does first:  
   
-It basically iterates trough the filenames, and instanciate a template with `t := template.New` and subsequently runs `t.Parse` on each file after reading them with `iotutil.ReadFile` source (here)[https://golang.org/src/html/template/template.go?s=12067:12122#L368]  
+It basically iterates trough the filenames, and instanciate a template with `t := template.New` and subsequently runs `t.Parse` on each file after reading them with `iotutil.ReadFile` source [here](https://golang.org/src/html/template/template.go?s=12067:12122#L368)
 
 So you can either:
 
