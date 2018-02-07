@@ -7,7 +7,7 @@ comments: true
 
 <p class="intro"><span class="dropcap">T</span>his is a quick tutorial showing how to use go-bindata to embed views so your application deployment is just a simple binary, instead of binary and the views directory.</p><br /><br />
 
-## Normal Approuch:
+## Normal Approach:
 
 In a normal application we read the views using the `html/template` package, like so:  
 
