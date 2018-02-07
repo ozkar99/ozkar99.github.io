@@ -152,3 +152,49 @@ or simply concat the strings when parsing:
 
 ## Conclusion:
 go-bindata is a tool that can allow us to embed resources into our application binary to keep deployment as simple as posible.
+
+## Bonus:
+Embed static assets, and serve them with an asset handler:
+
+First the asset handler:
+```
+package handlers
+
+import (
+	"strings"
+	"net/http"
+
+	"<yourproject>/bindata"
+)
+
+type AssetsHandler struct{}
+
+func NewAssetsHandler() *AssetsHandler {
+	return &AssetsHandler{}
+}
+
+func (a *AssetsHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	request := strings.TrimPrefix(r.URL.Path, "/")
+	file, err := bindata.Asset(request)
+	if err != nil {
+		w.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	w.Write(file)
+}
+```
+
+and then simply add the route to your router:
+
+```
+r.PathPrefix("/assets").Handler(handlers.NewAssetsHandler()
+```
+
+this code is using `gorilla/mux`
+
+also, for this to work you would need to include an `assets` directory along with the `views` directory for go-bindata like so:
+
+```
+go-bindata views/... assets/...
+```
