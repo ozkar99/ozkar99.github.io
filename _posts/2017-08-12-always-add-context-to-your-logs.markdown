@@ -15,34 +15,34 @@ Its a good rule of thumb to add context to your logs, if you dont believe lets s
 Imagine you have a system in which you run code asynchronously on diferent places.  
 
 You can have a webserver running, a page, if something goes wrong you log the exception:
-{% highlight csharp %}
+```csharp
   try {
     DoSomeWebServerStuff()
   }
   catch (Exception e) {
     Log.Error(e)
   }
-{% endhighlight %}
+```
 
 Then you have on the same server notifications arriving asynchronously:
-{% highlight csharp %}
+```csharp
   try {
     HandleNotification()
   }
   catch (Exception e) {
     Log.Error(e)
   }
-{% endhighlight %}
+```
 
 And also you have a service running somewhere, doing taks:  
-{% highlight csharp %}
+```csharp
   try {
     DoServiceTask()
   }
   catch (Exception e) {
     Log.Error(e)
   }
-{% endhighlight %}
+```
 
 We can already see that this smells really bad.  
 
@@ -58,71 +58,71 @@ XXXX-XX-XX XX:XX:XX|ERROR|System.NullReferenceException: Object reference not se
 
 ## The Solution:  
 This is easily fixable by adding context to the log calls:  
-{% highlight csharp %}
+```csharp
   try {
     DoSomeWebServerStuff()
   }
   catch (Exception e) {
     Log.Error(e)
   }
-{% endhighlight %}
+```
 
 Becomes:
 
-{% highlight csharp %}
+```csharp
   try {
     DoSomeWebServerStuff()
   }
   catch (Exception e) {
     Log.ErrorFormat("DoSomeWebServerStuff Exception: {0}", e)
   }
-{% endhighlight %}
+```
 
 <hr />
 
-{% highlight csharp %}
+```csharp
   try {
     HandleNotification()
   }
   catch (Exception e) {
     Log.Error(e)
   }
-{% endhighlight %}
+```
 
 Becomes:
 
-{% highlight csharp %}
+```csharp
   try {
     HandleNotification()
   }
   catch (Exception e) {
     Log.ErrorFormat("HandleNotification Exception: {0}", e)
   }
-{% endhighlight %}
+```
 
 <hr />
 
 And
 
-{% highlight csharp %}
+```csharp
   try {
     DoServiceTask()
   }
   catch (Exception e) {
     Log.Error(e)
   }
-{% endhighlight %}
+```
 
 Becomes: 
 
-{% highlight csharp %}
+```csharp
   try {
     DoServiceTask()
   }
   catch (Exception e) {
     Log.ErrorFormat("DoServiceTask Exception: {0}", e)
   }
-{% endhighlight %}
+```
 
 Now when you look at the logs you will see something like this:  
 
@@ -140,7 +140,16 @@ A little bit more easy to read, and easier to find quickly and expand on the des
 
 This is a very basic example, but its also a very basic concept.   
 
-And yes i know thats basically what the stack trace is for, but you can also add even MORE context like `Log.DebugFormat("HandleNotification: Type {0}, {1}", notifType, rawNotif")` or `Log.DebugFormat("DoSomeWebServerStuff Response From WebService X: {0}", resp.RawResponse)`.  
+And yes i know thats basically what the stack trace is for, but you can also add even MORE context like 
+
+```csharp
+Log.DebugFormat("HandleNotification: Type {0}, {1}", notifType, rawNotif")
+``` 
+or 
+
+```csharp 
+Log.DebugFormat("DoSomeWebServerStuff Response From WebService X: {0}", resp.RawResponse)
+```
 
 
 ## Notes:

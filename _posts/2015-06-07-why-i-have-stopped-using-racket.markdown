@@ -21,28 +21,28 @@ Or so thats what i thought, in reality doing that will only work if both a and b
 
 A more real life example would be something like:
 
-{% highlight lisp %}
+```scheme
 (define input (read))
 (if (= 3 input)
     #t
     #f)
-{% endhighlight %}
+```
 
 Except that that code would blow up, since read returns a string :/
 
 So the fix would be to convert the input to a number like this:
-{% highlight lisp %}
+```scheme
 (= 3 (string->number input))
-{% endhighlight %}
+```
 
 This quickly adds up and its just boilerplate... it breaks my heart.
 
 In a language with duck-typing like ruby the comparison implementation for a number could be like this:
-{% highlight ruby %}
+```ruby
 def == that
   self == that.to_i
 end
-{% endhighlight %}
+```
 
 where that is an object that respond ***.to_i*** (to integer) for example.
 
@@ -67,9 +67,15 @@ I understand this minimalism, and having done everything explicit is from the sc
 
 One quick example of this is the following scheme vs lisp comparison that really show each branch ideology:
 
-scheme: {% highlight lisp %} (set x (+ x 1)) {% endhighlight %}
+scheme:  
+```scheme 
+(set x (+ x 1)) 
+```
 
-common-lisp: {% highlight lisp %} (incf x) {% endhighlight %}
+common-lisp:
+```scheme
+(incf x)
+```
 
 Notice how common lisp has a function that increments by one, this really resonates with me, ***incf*** also does the set implicitly which i love
 
@@ -77,6 +83,6 @@ Notice how common lisp has a function that increments by one, this really resona
 
 Doing less racket, doing more common-lisp its not racket fault that it was not the laguage i expected it to be, thats my fault for being in the wrong band-wagon.
 
-I still racket is the best scheme implementation there is and dr racket is and i repeat myself because there are no other ways to describe it: 'crazy good'.
+I still think racket is the best scheme implementation there is and dr racket is and i repeat myself because there are no other ways to describe it: 'crazy good'.
 
 That being said, i thing ill be more comfortable on common-lisp land than in racket land, and i cant wait to start learning about the crazy stuff cl has like clos.
