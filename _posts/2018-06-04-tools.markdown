@@ -1,0 +1,48 @@
+---
+layout: post
+title: "tools"
+date: 2018-06-04
+comments: true
+---
+
+<p class="intro"><span class="dropcap">A</span>hh tooling</p>
+
+We developer loves tooling, after all we work all day on editors, compilers, interpreters, version control systems, just to name a few of the tools, that we use every day.
+<br />
+<br />
+
+## tools.ozkar.org
+
+So, i created a tools website, why? you ask.
+
+well, to scratch my itch of tools i want centralized, and available anywhere i want. (i reply)
+
+its also an excercise to do continuous coding outside of work.
+
+as usual the code is hosted on [github](https://github.com/ozkar99/tools), this time i went the extra mile and created a docker hub with the application dockerized if you want to run it yourself: [docker](https://hub.docker.com/r/ozkar99/tools)
+
+i am also using travis for ci/cd and its hosted [here](https://travis-ci.org/ozkar99/tools) if you want to check it out.
+
+right now, theres only a couple of modules **passwords** and **notes**, but i have planned a couple more,
+so lets check em out:
+
+
+![tools]({{ site.url }}/assets/posts/2018-06-04-tools/index.png)
+
+## passwd
+this is just a simple password module, it stores everything encrypted via [attr_encrypted](https://github.com/attr-encrypted/attr_encrypted), and doesnt load passwords onto the frontend, unless you specifically ask for a password first (this is trough an ajax request, via rails ujs).
+
+![password]({{ site.url }}/assets/posts/2018-06-04-tools/passwd.png)
+
+
+## notes
+the shiny new module, at the time of writing, basically i never liked evernote, and even tho the current state of the note module, is not as feature-full as i would like, it still servers its porpuse, the markdown rendering uses [marked](https://github.com/markedjs/marked) and the great [github-markdown-css](https://github.com/sindresorhus/github-markdown-css)css library, for this i created a custom `markdown-editor` vue.js component loosely based on the markdown example on the vue.js site.
+
+![notes]({{ site.url }}/assets/posts/2018-06-04-tools/notes.png)
+
+
+## whats next?
+
+a todo list app, and a pomodoro app.
+
+i had a rss reader on the initial scope, but i think that project is better suited to an application on its own, on a more concurrent language than ruby.

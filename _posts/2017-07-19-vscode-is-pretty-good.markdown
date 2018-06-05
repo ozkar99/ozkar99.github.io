@@ -25,10 +25,10 @@ This is something that no other editor can claim to have.
 So far ive had satisfactory results with go, ruby and js (node.js).  
 
 Heres a hover after hitting a breakpoint:  
-![Hover after hitting a breakpoint]({{ site.url }}assets/posts/2017-07-20-vscode-is-pretty-good/hover.jpeg)
+![Hover after hitting a breakpoint]({{ site.url }}/assets/posts/2017-07-20-vscode-is-pretty-good/hover.jpeg)
 
 Heres a view of the call stack:  
-![Stack view]({{ site.url }}assets/posts/2017-07-20-vscode-is-pretty-good/stack.jpeg)
+![Stack view]({{ site.url }}/assets/posts/2017-07-20-vscode-is-pretty-good/stack.jpeg)
 
 ## Its feature packed.
 In sublime and atom world, you would install a plugin for formatting xml.  
