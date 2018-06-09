@@ -11,7 +11,7 @@ comments: true
 <br />
 
 ## whats webhook?
-webhook is a simple http server application written in golang, that when presented with an appropiate request it will run a command on the host machine.
+webhook is a simple http server application written in golang, that when presented with an appropiate request it will run a command on the host machine, its a very simple but very powerful software.
 
 ## why is this useful?
 when you want to run commands on a http request, for example a git post-commit webhook or a continous integration webhook, its been a real workhorse at the company ia m currently employed as a critical piece of our ci/cd infrastructure.
