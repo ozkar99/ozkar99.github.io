@@ -5,7 +5,7 @@ date: 2018-06-09
 comments: true
 ---
 
-<p class="intro"><span class="dropcap">I</span>troducing webhook</p>
+<p class="intro"><span class="dropcap">I</span>ntroducing webhook</p>
 
 <br />
 <br />
