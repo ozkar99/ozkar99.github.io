@@ -12,7 +12,7 @@ whats new?
 
 ## elalmirante-web
 
-we have a new interface, a web-based one.
+we have a new interface, a web-based one (inspired by the [prometheus](https://prometheus.io/) interface).
 
 the CLI is still going to be mantained in parallel to this one, but i believe this one is easier to use in the long run.
 
