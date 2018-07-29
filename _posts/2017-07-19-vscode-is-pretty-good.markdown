@@ -5,7 +5,7 @@ date:   2017-07-20
 comments: true
 ---
 
-<p class="intro"><span class="dropcap">I</span> think vscode is often an underlooked option when choosing an editor</p>  
+<p class="intro">I think vscode is often an underlooked option when choosing an editor</p>  
 After using atom for a long time i made the switch to vscode and i think more people should give it a chance.  
 In this post i will ilustrate some of the benefits of using vscode as your go-to editor.  
 

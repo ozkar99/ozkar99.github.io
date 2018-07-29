@@ -5,7 +5,7 @@ date: 2018-06-04
 comments: true
 ---
 
-<p class="intro"><span class="dropcap">A</span>hh tooling</p>
+<p class="intro">Ahh tooling</p>
 
 We developer loves tooling, after all we work all day on editors, compilers, interpreters, version control systems, just to name a few of the tools, that we use every day.
 <br />

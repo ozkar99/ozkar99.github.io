@@ -5,7 +5,7 @@ date:   2017-08-03
 comments: true
 ---
 
-<p class="intro"><span class="dropcap">I</span>ntroducing schema.rb</p><br /><br />
+<p class="intro">Introducing schema.rb</p>
 
 ## What is schema.rb?
 A simple tool to handle schema migrations.  

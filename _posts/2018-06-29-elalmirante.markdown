@@ -5,11 +5,6 @@ date: 2018-06-29
 comments: true
 ---
 
-<p class="intro"><span class="dropcap">e</span>lalmirante</p>
-
-<br />
-<br />
-
 ## Introduction
 So i did it again, i started a new project.
 

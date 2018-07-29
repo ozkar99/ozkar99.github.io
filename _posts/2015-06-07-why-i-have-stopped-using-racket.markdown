@@ -4,7 +4,7 @@ title:  "Why i have stopped using racket"
 comments: true
 date:   2015-06-07
 ---
-<p class="intro"><span class="dropcap">S</span>ince the beginning of this school semester, i've made myself use lisp and its variants.</p>
+<p class="intro">Since the beginning of this school semester, i've made myself use lisp and its variants.</p>
 
 For 2 particular assignments, i have chosen racket as my goto language, mainly because the tooling is crazy good.
 DrRacket is great, it even has a graphical debugger and everything.

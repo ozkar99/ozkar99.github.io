@@ -5,10 +5,9 @@ date:   2017-08-12
 comments: true
 ---
 
-<p class="intro"><span class="dropcap">A</span>lways add context to your logs</p><br /><br />
-
-
+<p class="intro">
 Its a good rule of thumb to add context to your logs, if you dont believe lets see a simple case.  
+</p>
 
 
 ## Broken Logs:

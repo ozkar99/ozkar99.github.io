@@ -5,10 +5,7 @@ date: 2018-07-20
 comments: true
 ---
 
-<p class="intro"><span class="dropcap">I</span>ts been a while</p>
-
-<br />
-<br />
+<p class="intro">Its been a while</p>
 
 However the go middleware (client) for lagerauth is now available.
 

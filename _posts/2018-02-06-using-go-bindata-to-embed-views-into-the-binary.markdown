@@ -5,7 +5,7 @@ date:   2018-02-06
 comments: true
 ---
 
-<p class="intro"><span class="dropcap">T</span>his is a quick tutorial showing how to use go-bindata to embed views into your binary so your appplication deployment is just that binary.</p><br /><br />
+<p class="intro">This is a quick tutorial showing how to use go-bindata to embed views into your binary so your appplication deployment is just that binary.</p>
 
 ## Normal Approach:
 

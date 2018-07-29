@@ -5,7 +5,7 @@ date: 2018-05-14
 comments: true
 ---
 
-<p class="intro"><span class="dropcap">S</span>o i took a hiatus for a while, and didnt used rails for a couple of years.</p>
+<p class="intro">So i took a hiatus for a while, and didnt used rails for a couple of years.</p>
 
 Now that i am back building a product with rails, i have noticed `ActiveRecord::Migration` is verioned and you need to inherit from a versioned class `ActiveRecord::Migration[{n}]` where n is the migration version, it could be **4.2**, **5.0**, **5.2** etc...
 
