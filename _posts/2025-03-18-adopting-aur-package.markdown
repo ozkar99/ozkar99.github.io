@@ -6,7 +6,7 @@ comments: true
 ---
 
 <p class="intro">
-Today i ended up adoptin an orphaned package in the AUR, <https://aur.archlinux.org/packages/python-gruut>
+Today i ended up adoptin an orphaned package in the AUR, <a href="https://aur.archlinux.org/packages/python-gruut" />
 </p>
 
 The AUR is archlinux user repository, one of arch coolest features, its similar to [BSD ports](https://aur.archlinux.org/).
