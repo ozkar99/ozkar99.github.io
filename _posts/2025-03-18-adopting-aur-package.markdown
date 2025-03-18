@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "adopting an AUR packager"
+title: "adopting an AUR package"
 date: 2025-03-18
 comments: true
 ---
