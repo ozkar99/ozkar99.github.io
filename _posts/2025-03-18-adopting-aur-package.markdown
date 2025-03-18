@@ -9,7 +9,7 @@ comments: true
 Today i ended up adoptin an orphaned package in the AUR: <a href="https://aur.archlinux.org/packages/python-gruut">python-gruut</a>
 </p>
 
-The AUR is archlinux user repository, one of arch coolest features, its similar to [BSD ports](https://aur.archlinux.org/).
+The AUR is [archlinux user repository](https://aur.archlinux.org/), one of arch coolest features.
 
 (its maybe not a super well known fact but archlinux is my favorite linux dristro due to its BSD-like qualities).
 
