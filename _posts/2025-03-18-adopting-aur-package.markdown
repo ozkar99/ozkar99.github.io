@@ -6,7 +6,7 @@ comments: true
 ---
 
 <p class="intro">
-Today i ended up adoptin an orphaned package in the AUR, https://aur.archlinux.org/packages/python-gruut 
+Today i ended up adoptin an orphaned package in the AUR, <https://aur.archlinux.org/packages/python-gruut>
 </p>
 
 The AUR is archlinux user repository, one of arch coolest features, its similar to [BSD ports](https://aur.archlinux.org/).
@@ -34,7 +34,7 @@ Now my stealth project builds on archlinux with no pip packages breaking my clea
 
 In fact, this post took longer to write than it was to adopt the package and fix it.
 
-Heres the diff for the fix: https://aur.archlinux.org/cgit/aur.git/commit/?h=python-gruut&id=4f50985c01633f8628c8211462118f85aa7f9f4b 
+Heres the diff for the fix: <https://aur.archlinux.org/cgit/aur.git/commit/?h=python-gruut&id=4f50985c01633f8628c8211462118f85aa7f9f4b>
 
 ```
 @@ -14,7 +14,7 @@ pkgbase = python-gruut
